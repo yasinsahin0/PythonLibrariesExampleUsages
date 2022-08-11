@@ -1,12 +1,20 @@
 import requests
 
-url = 'http://127.0.0.1:5001/'
-myobj = {'somekey': 'somevalue'}
+url = 'http://127.0.0.1:5001'
 
-x = requests.post(url, json = myobj)
+def home_req():
+    req_url = url + "/"
+    response = requests.post(req_url)
+    print(response.text)
 
-print(x.text)
+def var_resp():
+    req_url = url + "/NameSurname"
+    payload = {'name': 'yasin',
+               'surname': 'sahin'}
+    response = requests.request("POST", req_url, data=payload)
+    print(response.text)
 
-# Yönlendirme aktif vey pasif, True - False
-a = requests.post(url, data = myobj, allow_redirects=True)
-print(a.text)
+
+if __name__ == "__main__":
+    home_req()
+    var_resp()

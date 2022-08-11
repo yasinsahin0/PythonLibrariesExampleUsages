@@ -24,6 +24,14 @@ app.add_url_rule("/", endpoint="index")
 def index():
     return "indexx"
 
+@app.route('/NameSurname',methods=['POST'])
+def var_resp():
+    name = request.form['name']
+    surname = request.form['surname']
+    # print("Name : {0}, Surname : {1}".format(name,surname))
+    top_str = name + " " + surname
+    return top_str
+
 @app.route('/path/<path:subpath>')
 def show_subpath(subpath):
     # Gelen değer bir string'dir.
