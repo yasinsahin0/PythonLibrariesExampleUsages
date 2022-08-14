@@ -1,0 +1,6 @@
+WARNING:root:Watch out!
+INFO:root:I told you so
+DEBUG:root:This message should go to the log file
+WARNING:root:Watch out!
+INFO:root:I told you so
+ERROR:root:And non-ASCII stuff, too, like Øresund and Malmö
