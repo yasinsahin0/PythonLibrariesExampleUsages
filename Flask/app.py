@@ -3,6 +3,9 @@ from markupsafe import escape
 
 app = Flask(__name__)
 
+host = "127.0.0.1"
+port = 5001
+
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
     # ana url tıkladığımızda ekrana hello world yazısını bastırır.
@@ -56,4 +59,4 @@ def page_not_found(error):
     return "Hata : 500"
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5001, debug=True)
+    app.run(host=host, port=port, debug=True)
